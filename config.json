@@ -3,5 +3,6 @@
   "dbhost" : "",
   "dbuser" : "",
   "dbpass" : "",
-  "dbname" : ""
+  "dbname" : "",
+  "dbport" : ""
 }
