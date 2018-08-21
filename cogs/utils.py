@@ -10,7 +10,7 @@ class UtilsCog:
 
     @commands.command()
     async def test(self, ctx):
-        await ctx.send("SBC Bot is working correctly.")
+        await ctx.send("Bot is working correctly.")
 
     @commands.command()
     async def info(self, ctx):
