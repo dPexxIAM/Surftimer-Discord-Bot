@@ -18,7 +18,8 @@ with open('config.json') as f:
     dbuser = file_dict['dbuser']
     dbpass = file_dict['dbpass']
     dbname = file_dict['dbname']  
-    
+    dbport = file_dict['dbport']     
+
 print("Bot loaded successfully")
 
 if __name__ == '__main__':
@@ -31,7 +32,7 @@ if __name__ == '__main__':
 	
 @bot.command()
 async def mtop(ctx, map):
-    conn = await aiomysql.connect(host=dbhost, port=3306, user=dbuser, password=dbpass, db=dbname, loop=loop)
+    conn = await aiomysql.connect(host=dbhost, port=dbport, user=dbuser, password=dbpass, db=dbname, loop=loop)
     async with conn.cursor() as cur:
         await cur.execute("SELECT name, MIN(runtimepro) FROM ck_playertimes WHERE mapname = %s AND runtimepro > -1.0 AND style = 0", (map))
         result = await cur.fetchall()
