@@ -4,4 +4,4 @@ More commands will be added soon
 
 
 # Installation
-Upload both files to your dedicated server, edit config.json with your details, then run the bot. 
+Upload all files to your dedicated server, edit config.json with your details, then run the bot. 
