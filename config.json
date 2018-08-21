@@ -2,7 +2,7 @@
   "token": "",
   "dbhost" : "",
   "dbuser" : "",
+  "dbport" :   , 
   "dbpass" : "",
-  "dbname" : "",
-  "dbport" : ""
+  "dbname" : ""
 }
