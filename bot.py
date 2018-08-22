@@ -8,19 +8,18 @@ import sys, traceback
 
 initial_extensions = ['cogs.utils']
 
-bot = commands.Bot(command_prefix='!')
-loop = asyncio.get_event_loop()
-
 with open('config.json') as f:
     file_dict = json.load(f)
     token = file_dict['token']
+    prefix = file_dict['prefix']
     dbhost = file_dict['dbhost']
     dbuser = file_dict['dbuser']
     dbpass = file_dict['dbpass']
     dbname = file_dict['dbname']  
-    dbport = file_dict['dbport']     
-
-print("Bot loaded successfully")
+    dbport = file_dict['dbport']  
+	
+bot = commands.Bot(command_prefix=prefix)
+loop = asyncio.get_event_loop()
 
 if __name__ == '__main__':
     for extension in initial_extensions:
@@ -29,6 +28,8 @@ if __name__ == '__main__':
         except Exception as e:
             print(f'Failed to load extension {extension}.', file=sys.stderr)
             traceback.print_exc()
+		
+print("Bot loaded successfully")
 	
 @bot.command()
 async def mtop(ctx, map):
