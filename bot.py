@@ -45,10 +45,7 @@ async def mtop(ctx, map):
             seconds = runtime % 60
             milli = round(int(runtime * 100))
             milli = milli % 100
-            if runtime >= 600:
-                formatTime = "%s:%s:%s" % (int(minutes), int(seconds), int(milli))
-            else:
-                formatTime = "0%s:%s:%s" % (int(minutes), int(seconds), int(milli)) 
+            formatTime = "%02d:%02d:%02d" % (int(minutes), int(seconds), int(milli)) 
             await ctx.send(name + ' has the ' + map + ' record with a time of ' + str(formatTime))
     conn.close()
 
